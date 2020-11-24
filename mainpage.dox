@@ -1,0 +1,168 @@
+/**
+ \mainpage MiniDB
+
+<H2> 
+<B>----Welcome to MiniDB-------</B>
+</H2>
+
+ MiniDB stands for Minimal DataBase. MiniDB is a minimal in-memory manager for a Data Base.
+ 
+ MiniDB purpose is to be a simple implementation of an in-memory representation column-wise 
+ data base, in order to try to implement SIMD technology in common data base operations,
+ mainly in the query engine. << STILL WORKING ON THAT >>
+
+ Each process of MiniDBShell correspond to a data base. So everything that
+ is done in the current process works with the assumption that is a single data base.
+
+<H2>
+<B>----Command Line options----</B>
+</H2>
+
+ <B><I>'-e'</I></B> - "execute subsequent arguments as commands."
+
+ <B><I>'-f'</I></B> - "execute subsequent arguments as command files
+         (Files with command(s))."
+
+ <B><I>'-q'</I></B> - "execute subsequent arguments as query files
+         (Files with querie(s))."
+
+ <B><I>'-h'</I></B> - "shows this help text."
+
+ <B><I>NOTE: query command is unsupported in -e and -f.
+       if no mode is given in command, arguments will
+       be executed as if -e were active.</I></B>
+
+
+<H2>
+<B>----Available Commands----</B>
+</H2>
+
+ <B><I>'createTable'</I></B>   - "creates a new table with the given
+                    table name.
+                    Eg. createTable Table_name"
+
+ <B><I>'deleteTable'</I></B>   - "deletes a table that match the given name.
+                    Eg. deleteTable Table_name"
+ 
+ <B><I>'addColumn'</I></B>     - "adds a Column to the given table with the
+                    given Column Name and data type.
+                    Data Types(1 = char, 2 = int, 3 = float, 4 = double).
+                    Eg. addColumn Table_name Column_name 2"
+
+ <B><I>'insertRow'</I></B>     - "inserts a new row to the given table with the
+                    following format: (element,)+.
+                    For example, if we want to insert a new row to
+                    a table wich layout is a char, char, float we
+                    would type: 'm,b,12.3,' without the single commas.
+                    Eg. insertRow Table_name m,b,12.3"
+
+ <B><I>'clear'</I></B>         - "clears the actual screen.
+                    Eg. clear"
+
+ <B><I>'printTable'</I></B>    - "prints all the rows of a given table.
+                    Eg. printTable Table_name"
+
+ <B><I>'mentionTables'</I></B> - "print the names of all existent tables.
+                    Eg. mentionTables"
+
+ <B><I>'saveTable'</I></B>     - "save to disk the given table as a flat
+                    file named after the table name without extension.
+                    Eg. saveTable Table_name"
+
+ <B><I>'loadTable'</I></B>     - "loads to the actual process the given table.
+                    If table's flat file is not found, it doesn't
+                    load anything.
+                    Eg. loadTable Table_name"
+
+ <B><I>'saveDB'</I></B>        - "save to disk a zip file that contains all tables'
+                    flat files with the given name.
+                    Eg. saveDB DB_name"
+
+ <B><I>'loadDB'</I></B>        - "loads to the actual process the given db unzipping
+                    and loading it's content with the given name.
+                    Eg. loadDB DB_name"
+
+ <B><I>'connectTo'</I></B>     - "connects to the given table, so in the commands 
+                    <addColumn, insertRow, printTable, saveTable> you
+                    are not prompted for the table name.
+                    Eg. connectTo Table_name"
+
+ <B><I>'disconnect'</I></B>    - "disable current table connection feature.
+                    Eg. disconnect"
+
+ <B><I>'query'</I></B>         - "open query parser. Waits for a typed query and it's
+                    parsed and executed afterwards (read from stdin).
+                    Eg. query select * from Table_name;"
+
+ <B><I>'loadQuery'</I></B>     - "loads a file with one or more queries in it and
+                    parses/execute each one.
+                    Eg. loadQuery query.qry"
+
+ <B><I>'exit/quit'</I></B>     - "deletes all existent tables (Complete DB) and
+                    close MiniDB process.
+                    Eg. quit"
+
+ <B><I>'help'</I></B>          - "show this help text.
+                    Eg. help"
+
+
+<H2>
+<B>----Query Grammmar----</B>
+</H2>
+
+
+ <B><I>query:</I></B> query_body query_end
+
+ <B><I>query_body:</I></B> select_query | insert_query | create_query | drop_query
+
+ <B><I>query_end:</I></B> ';'
+
+ <B><I>drop_query:</I></B> DROP TABLE table_name
+
+ <B><I>create_query:</I></B> create_body '(' create_columns ')'
+
+ <B><I>create_body:</I></B> CREATE TABLE STRING
+
+ <B><I>create_columns:</I></B> new_column ',' create_columns | new_column
+
+ <B><I>new_column:</I></B> STRING DATATYPE
+
+ <B><I>insert_query:</I></B> INSERT INTO table_name VALUES '(' values ')'
+
+ <B><I>values:</I></B> val ',' values | val
+
+ <B><I>select_query:</I></B> select from where group_by
+ 
+ <B><I>select:</I></B> SELECT select_body
+
+ <B><I>from:</I></B> FROM tables
+
+ <B><I>where:</I></B> /empty rule/ | WHERE condition
+
+ <B><I>group_by:</I></B> /empty rule/ | GROUP BY columns
+
+ <B><I>columns:</I></B> column ',' columns | column
+    
+ <B><I>select_body:</I></B> '*' | s_body
+
+ <B><I>s_body:</I></B> s_element ',' s_body | s_element
+
+ <B><I>s_element:</I></B> column | aggregation_function
+
+ <B><I>aggregation_function:</I></B> AGGREGATION '(' column ')'
+
+ <B><I>tables:</I></B> table_name ',' tables | table_name
+
+ <B><I>condition:</I></B> condition OR condition_and | condition_and
+
+ <B><I>condition_and:</I></B> condition_and AND conditionF | conditionF
+
+ <B><I>conditionF:</I></B> '(' condition ')' | '!' '(' condition ')' 
+           | column RELOP column | column RELOP val
+
+ <B><I>column:</I></B> table_name '.' STRING
+
+ <B><I>table_name:</I></B> STRING
+
+ <B><I>val:</I></B> CHAR | INT | FLOAT | DOUBLE
+ */

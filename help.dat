@@ -1,0 +1,155 @@
+/************************/
+/* Welcome to MiniDB!!! */
+/************************/
+
+Each process of MiniDBShell correspond to a data base. So everything that
+is done in this process works with the assumption that is a single data base.
+
+/************************/
+/* Command Line options */
+/************************/
+
+'-e' - "execute subsequent arguments as commands."
+
+'-f' - "execute subsequent arguments as command files
+        (Files with command(s))."
+
+'-q' - "execute subsequent arguments as query files
+        (Files with querie(s))."
+
+'-h' - "shows this help text."
+
+NOTE: query command is unsupported in -e and -f.
+      if no mode is given in command, arguments will
+      be executed as if -e is active.
+
+/************************/
+/** Available Commands **/
+/************************/
+
+'createTable'   - "creates a new table with the given
+                   table name.
+                   Eg. createTable Table_name"
+
+'deleteTable'   - "deletes a table that match the given name.
+                   Eg. deleteTable Table_name"
+
+'addColumn'     - "adds a Column to the given table with the
+                   given Column Name and data type.
+                   Data Types(1 = char, 2 = int, 3 = float, 4 = double).
+                   Eg. addColumn Table_name Column_name 2"
+
+'insertRow'     - "inserts a new row to the given table with the
+                   following format: (element,)+.
+                   For example, if we want to insert a new row to
+                   a table wich layout is a char, char, float we
+                   would type: 'm,b,12.3,' without the single commas.
+                   Eg. insertRow Table_name m,b,12.3"
+
+'clear'         - "clears the actual screen.
+                   Eg. clear"
+
+'printTable'    - "prints all the rows of a given table.
+                   Eg. printTable Table_name"
+
+'mentionTables' - "print the names of all existent tables.
+                   Eg. mentionTables"
+
+'saveTable'     - "save to disk the given table as a flat
+                   file named after the table name without extension.
+                   Eg. saveTable Table_name"
+
+'loadTable'     - "loads to the actual process the given table.
+                   If table's flat file is not found, it doesn't
+                   load anything.
+                   Eg. loadTable Table_name"
+
+'saveDB'        - "save to disk a zip file that contains all tables'
+                   flat files with the given name.
+                   Eg. saveDB DB_name"
+
+'loadDB'        - "loads to the actual process the given db unzipping
+                   and loading it's content with the given name.
+                   Eg. loadDB DB_name"
+
+'connectTo'     - "connects to the given table, so in the commands 
+                   <addColumn, insertRow, printTable, saveTable> you
+                   are not prompted for the table name.
+                   Eg. connectTo Table_name"
+
+'disconnect'    - "disable current table connection feature.
+                   Eg. disconnect"
+
+'query'         - "open query parser. Waits for a typed query and it's
+                   parsed and executed afterwards (read from stdin).
+                   Eg. query select * from Table_name;"
+
+'loadQuery'     - "loads a file with one or more queries in it and
+                   parses/execute each one.
+                   Eg. loadQuery query.qry"
+
+'exit/quit'     - "deletes all existent tables (Complete DB) and
+                   close MiniDB process.
+                   Eg. quit"
+
+'help'          - "show this help text.
+                   Eg. help"
+
+/************************/
+/**** Query Grammmar ****/
+/************************/
+
+query: query_body query_end
+
+query_body: select_query | insert_query | create_query | drop_query
+
+query_end: ';'
+
+drop_query: DROP TABLE table_name
+
+create_query: create_body '(' create_columns ')'
+
+create_body: CREATE TABLE STRING
+
+create_columns: new_column ',' create_columns | new_column
+
+new_column: STRING DATATYPE
+
+insert_query: INSERT INTO table_name VALUES '(' values ')'
+
+values: val ',' values | val
+
+select_query: select from where group_by
+ 
+select: SELECT select_body
+
+from: FROM tables
+
+where: /*empty rule*/ | WHERE condition
+
+group_by: /*empty rule*/ | GROUP BY columns
+
+columns: column ',' columns | column
+    
+select_body: '*' | s_body
+
+s_body: s_element ',' s_body | s_element
+
+s_element: column | aggregation_function
+
+aggregation_function: AGGREGATION '(' column ')'
+
+tables: table_name ',' tables | table_name
+
+condition: condition OR condition_and | condition_and
+
+condition_and: condition_and AND conditionF | conditionF
+
+conditionF: '(' condition ')' | '!' '(' condition ')' 
+           | column RELOP column | column RELOP val
+
+column: table_name '.' STRING
+
+table_name: STRING
+
+val: CHAR | INT | FLOAT | DOUBLE

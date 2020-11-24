@@ -18,7 +18,7 @@ The scope of this project was supposed to be driven by someone working on resear
 
 ## Docs
 
-Please refer to [Oracle-Iteso Dev Report MiniDB.pdf](.\Oracle-Iteso Dev Report MiniDB.pdf) file for a document describing the project in more detail.
+Please refer to [Oracle-Iteso Dev Report MiniDB.pdf](.\Oracle-Iteso-Dev-Report-MiniDB.pdf) file for a document describing the project in more detail.
 
 Please refer to the [source code's doxygen documentation](.\src\html\index.html).
 

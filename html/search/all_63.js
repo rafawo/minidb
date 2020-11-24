@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['clear_5fcommand',['clear_command',['../MiniDBShell_8c.html#ab697e004ba7d3c8e433188e7da5a4460',1,'MiniDBShell.c']]],
+  ['cmd',['cmd',['../structcmd.html',1,'']]],
+  ['cmds',['CMDS',['../MiniDBShell_8c.html#a43280c7ce74fc5fb6d306adf9dbf9f36',1,'MiniDBShell.c']]],
+  ['colrelopcol_5fnode',['ColRelopCol_Node',['../structConditionNode__t_1_1Node__t_1_1ColRelopCol__Node.html',1,'ConditionNode_t::Node_t']]],
+  ['colrelopval_5fnode',['ColRelopVal_Node',['../structConditionNode__t_1_1Node__t_1_1ColRelopVal__Node.html',1,'ConditionNode_t::Node_t']]],
+  ['column',['column',['../structAggregation__t.html#adec0b5c3e101b9918682b6eb551f6f81',1,'Aggregation_t']]],
+  ['column_5fnames',['column_names',['../structtable__t.html#abb26b258d37deb0eb40e6c6b95aabda5',1,'table_t']]],
+  ['column_5fp',['Column_p',['../SemanticTypes_8h.html#a5e2758aaf8bea2d0c05be3e0e05c156f',1,'SemanticTypes.h']]],
+  ['column_5ft',['Column_t',['../structColumn__t.html',1,'Column_t'],['../SemanticTypes_8h.html#a6c704c73900216ea533b7897eac65fc9',1,'Column_t():&#160;SemanticTypes.h']]],
+  ['columncount',['columnCount',['../structtable__t.html#a7c84330c7523a106e0162aa33434c22c',1,'table_t']]],
+  ['columnexists',['columnExists',['../TableFunctions_8h.html#aacb76d94ebe323ec5acb29b1ce45e92e',1,'TableFunctions.h']]],
+  ['columnname',['ColumnName',['../structColumn__t.html#a2b33d6f79ba37cc279fc1a1ed3eb5cc9',1,'Column_t']]],
+  ['command',['COMMAND',['../MiniDBShell_8c.html#a17faaa79f01b436a115c89e16a5dac31',1,'MiniDBShell.c']]],
+  ['commands',['commands',['../MiniDBShell_8c.html#a53ea777a0d0dd8ab8ace4c1a8f405086',1,'MiniDBShell.c']]],
+  ['conditionnode_5fp',['ConditionNode_p',['../SemanticTypes_8h.html#a136f7f5a0878c3da01324c65fd37c031',1,'SemanticTypes.h']]],
+  ['conditionnode_5ft',['ConditionNode_t',['../structConditionNode__t.html',1,'ConditionNode_t'],['../SemanticTypes_8h.html#a6ea41dc829726458b584ce8e60dd3aca',1,'ConditionNode_t():&#160;SemanticTypes.h']]],
+  ['connected',['connected',['../MiniDBShell_8c.html#a9709aefe4930807392898aecb0cb8a79',1,'MiniDBShell.c']]],
+  ['connectto_5fcommand',['connectTo_command',['../MiniDBShell_8c.html#abda4605ef7c9aa03db0324a91f8423bd',1,'MiniDBShell.c']]],
+  ['createtable',['createTable',['../TableFunctions_8h.html#a2942e0d5be1b985ed1ec1b8a8f78c930',1,'TableFunctions.h']]],
+  ['createtable_5fcommand',['createTable_command',['../MiniDBShell_8c.html#ac7bae2d30362906423a91605d5842466',1,'MiniDBShell.c']]]
+];

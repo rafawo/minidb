@@ -1,0 +1,62 @@
+Welcome!!!!
+
+Query:
+create table table1(a int, b int);
+
+
+Parse SUCCESS!!
+
+Query:
+insert into table1 values(0, 0);
+
+
+Parse SUCCESS!!
+
+Query:
+insert into table1 values(-1024, 1024);
+
+
+Parse SUCCESS!!
+
+Query:
+insert into table1 values(-1048576, 1048576);
+
+
+Parse SUCCESS!!
+
+Query:
+insert into table1 values(-2147483647, 2147483647);
+
+
+Parse SUCCESS!!
+
+Query:
+insert into table1 values(-2147483648, 2147483648);
+
+
+Parse SUCCESS!!
+
+Query:
+insert into table1 values(-4294967295, 4294967295);
+
+
+Parse SUCCESS!!
+
+Query:
+select * from table1;
+
+Table Name: @temp_table
+Number of Columns: 2
+Row Size: 8 bytes
+
+Column DataTypes:
+a(int) b(int) 
+'0' '0' 
+'-1024' '1024' 
+'-1048576' '1048576' 
+'-2147483647' '2147483647' 
+'-2147483648' '-2147483648' 
+'1' '-1' 
+
+Parse SUCCESS!!
+

@@ -1,0 +1,38 @@
+Welcome!!!!
+
+Query:
+create table t1(a int);
+
+
+Parse SUCCESS!!
+
+Query:
+create table t2(b int);
+
+
+Parse SUCCESS!!
+
+Query:
+create table t3(c int);
+
+
+Parse SUCCESS!!
+
+Query:
+select * from t4;
+Table 't4' doesn't exist!!
+Query:
+select t1.b from t1;
+Table 't1' or column 'b' not defined!!
+Query:
+select t2.c from t2;
+Table 't2' or column 'c' not defined!!
+Query:
+select t3.d from t3;
+Table 't3' or column 'd' not defined!!
+Query:
+select t1.a, t2.c from t1,t2;
+Table 't2' or column 'c' not defined!!
+Query:
+select t3.a from t1, t2;
+Table 't3' or column 'a' not defined!!

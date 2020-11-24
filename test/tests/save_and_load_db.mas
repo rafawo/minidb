@@ -1,0 +1,108 @@
+Archive: DB_test.zip
+ inflating: DB_test_meta_data.mtd 
+ inflating: t1 
+ inflating: t2 
+
+createTable t1
+Created Succesfully!!
+
+connectTo t1
+Connected Succesfully!!
+
+addColumn a 1
+Added Column Sucesfully!!
+
+addColumn b 2
+Added Column Sucesfully!!
+
+addColumn c 4
+Added Column Sucesfully!!
+
+insertRow 'a',1,1.0,
+Inserted Row!!
+
+insertRow 'b',2,2.0,
+Inserted Row!!
+
+insertRow 'c',3,3.0,
+Inserted Row!!
+
+Table Name: t1
+Number of Columns: 3
+Row Size: 13 bytes
+
+Column DataTypes:
+a(char) b(int) c(double) 
+'a' '1' '1.000000' 
+'b' '2' '2.000000' 
+'c' '3' '3.000000' 
+
+Disconnected from t1
+
+createTable t2
+Created Succesfully!!
+
+connectTo t2
+Connected Succesfully!!
+
+addColumn a 1
+Added Column Sucesfully!!
+
+addColumn b 2
+Added Column Sucesfully!!
+
+addColumn c 4
+Added Column Sucesfully!!
+
+insertRow 'd',4,4.0,
+Inserted Row!!
+
+insertRow 'e',5,5.0,
+Inserted Row!!
+
+insertRow 'f',6,6.0,
+Inserted Row!!
+
+Table Name: t2
+Number of Columns: 3
+Row Size: 13 bytes
+
+Column DataTypes:
+a(char) b(int) c(double) 
+'d' '4' '4.000000' 
+'e' '5' '5.000000' 
+'f' '6' '6.000000' 
+
+Disconnected from t2
+
+Showing current existing tables
+t1, t2, 
+
+deleteTable t1
+Deleted Succesfully!!
+
+deleteTable t2
+Deleted Succesfully!!
+
+DB was loaded properly!!
+
+Showing current existing tables
+t1, t2, 
+Table Name: t1
+Number of Columns: 3
+Row Size: 13 bytes
+
+Column DataTypes:
+a(char) b(int) c(double) 
+'a' '1' '1.000000' 
+'b' '2' '2.000000' 
+'c' '3' '3.000000' 
+Table Name: t2
+Number of Columns: 3
+Row Size: 13 bytes
+
+Column DataTypes:
+a(char) b(int) c(double) 
+'d' '4' '4.000000' 
+'e' '5' '5.000000' 
+'f' '6' '6.000000'

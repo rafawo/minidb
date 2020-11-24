@@ -1,0 +1,19 @@
+createTable table1
+
+connectTo table1
+addColumn a 2
+addColumn b 1
+
+insertRow 1,a,
+insertRow 2,b,
+insertRow 3,c,
+
+printTable
+
+disconnect
+
+mentionTables
+
+deleteTable table1
+
+mentionTables

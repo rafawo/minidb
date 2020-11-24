@@ -1,0 +1,35 @@
+Welcome!!!!
+
+Query:
+create table t1(a int);
+
+
+Parse SUCCESS!!
+
+Query:
+create table t1(a int);
+Table 't1' already exists!!!
+Query:
+create table t1(b int);
+Table 't1' already exists!!!
+Query:
+create table t1(c char);
+Table 't1' already exists!!!
+Query:
+drop table t1;
+
+
+Parse SUCCESS!!
+
+Query:
+create table t1(a int);
+
+
+Parse SUCCESS!!
+
+Query:
+create table t2(a int);
+
+
+Parse SUCCESS!!
+

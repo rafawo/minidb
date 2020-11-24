@@ -1,0 +1,69 @@
+Welcome!!!!
+
+Query:
+create table t(a float);
+
+
+Parse SUCCESS!!
+
+Query:
+insert into t values(0.0f);
+
+
+Parse SUCCESS!!
+
+Query:
+insert into t values(0.000001f);
+
+
+Parse SUCCESS!!
+
+Query:
+insert into t values(-0.000001f);
+
+
+Parse SUCCESS!!
+
+Query:
+insert into t values(123456.125f);
+
+
+Parse SUCCESS!!
+
+Query:
+insert into t values(-123456.125f);
+
+
+Parse SUCCESS!!
+
+Query:
+insert into t values(340282346638528859811704183484516925440.000000f);
+
+
+Parse SUCCESS!!
+
+Query:
+insert into t values(-340282346638528859811704183484516925440.000000f);
+
+
+Parse SUCCESS!!
+
+Query:
+select * from t;
+
+Table Name: @temp_table
+Number of Columns: 1
+Row Size: 4 bytes
+
+Column DataTypes:
+a(float) 
+'0.000000' 
+'0.000001' 
+'-0.000001' 
+'123456.125000' 
+'-123456.125000' 
+'340282346638528859811704183484516925440.000000' 
+'-340282346638528859811704183484516925440.000000'
+
+Parse SUCCESS!!
+

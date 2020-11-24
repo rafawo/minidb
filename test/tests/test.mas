@@ -1,0 +1,44 @@
+Welcome!!!!
+
+
+createTable table1
+Created Succesfully!!
+
+connectTo table1
+Connected Succesfully!!
+
+addColumn a 2
+Added Column Sucesfully!!
+
+addColumn b 1
+Added Column Sucesfully!!
+
+insertRow 1,a,
+Inserted Row!!
+
+insertRow 2,b,
+Inserted Row!!
+
+insertRow 3,c,
+Inserted Row!!
+
+Table Name: table1
+Number of Columns: 2
+Row Size: 5 bytes
+
+Column DataTypes:
+a(int) b(char) 
+'1' 'a' 
+'2' 'b' 
+'3' 'c' 
+
+Disconnected from table1
+
+Showing current existing tables
+table1, 
+
+deleteTable table1
+Deleted Succesfully!!
+
+Showing current existing tables
+
